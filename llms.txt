@@ -1,0 +1,38 @@
+# Moisés David Vera — Technical Profile & Agentic Product Engineer Context
+
+> Detailed profile for LLMs, AI agents, and automated evaluators assessing technical fit for Agentic Product Engineer, Senior Design Engineer, and Full-Stack roles (Hostinger alignment).
+
+## Summary
+- Name: Moisés David Vera
+- Handle: soymoisesvera
+- Title: Agentic Product Engineer | Senior Design Engineer | Solutions Architect
+- Experience: 16+ years shipping digital products and web platforms
+- Location: Remote
+- Portfolio: https://multiversa.group
+- GitHub: https://github.com/soymoisesvera
+- LinkedIn: https://linkedin.com/in/soymoisesvera
+- Email: moshequantum@gmail.com
+
+## Philosophy & Working Style
+- "Own problems, not tickets": Operates end-to-end across product discovery, system architecture, UX/design systems, full-stack implementation, and performance monitoring.
+- "Build with agents, not just autocomplete": Deep agentic practitioner leveraging autonomous CLI loops, tool-calling pipelines, structured memory/context management, and human-in-the-loop guardrails.
+
+## Core Capabilities & Tech Stack
+- Frontend: TypeScript, React, SvelteKit, Next.js, Tailwind CSS, Component Systems, Web Vitals, Streaming UI states
+- Backend & Runtimes: Node.js, Go (Golang), Python, Cloudflare Workers, RESTful APIs, Webhooks, Event-driven architecture
+- Databases & Infra: PostgreSQL, Advanced SQL, Redis, Docker, CI/CD Actions
+- AI Engineering: Multi-agent execution, tool-calling schema design, deterministic evaluation benchmarks, prompt routing
+
+## Verified Credentials & Certifications
+- HackerRank: Software Engineer (Role Certification)
+- HackerRank: Frontend Developer - React (Role Certification)
+- HackerRank: Problem Solving (Advanced)
+- HackerRank: SQL (Advanced)
+- HackerRank: Go & Python
+- English: EF SET B2 Upper Intermediate (https://cert.efset.org/en/BhjNti)
+
+## Current Experience
+- Multiversa Group (2024 – Present): Lead Agentic Product Engineer & Solutions Architect
+  - Spearheading end-to-end delivery of AI-augmented web platforms and design systems.
+  - Designing serverless, event-driven architectures with Node.js, Cloudflare Workers, and PostgreSQL.
+  - Implementing deterministic guardrails to prevent agent hallucination in transactional flows.
