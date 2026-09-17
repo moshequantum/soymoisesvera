@@ -1,7 +1,9 @@
-# Hi, I'm Moisés David Vera 👋
-### Agentic Product Engineer & Senior Design Engineer
-
-I build products from idea to production by combining high-fidelity UX craftsmanship with full-stack engineering and production-grade agentic AI orchestration.
+<div align="center">
+  <img src="./assets/profile.jpg" alt="Moisés David Vera" width="180" style="border-radius: 50%; object-fit: cover;" />
+  <h1>Moisés David Vera</h1>
+  <p><strong>Agentic Product Engineer & Senior Design Engineer</strong></p>
+  <p><em>Building products from idea to production with high-fidelity UX craftsmanship, full-stack engineering, and production-grade agentic AI orchestration.</em></p>
+</div>
 
 ---
 
