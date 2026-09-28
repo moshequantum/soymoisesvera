@@ -1,13 +1,15 @@
 <div align="center">
-  <img src="./assets/profile.jpg" alt="Moisés David Vera" width="180" style="border-radius: 50%; object-fit: cover;" />
-  <h1>Moisés David Vera</h1>
-  <p><strong>Founding Product Engineer · AI-Native & Rapid Delivery (0 → 1)</strong></p>
-  <p><em>Turning complex business needs into shipped, reliable software at extreme velocity.</em></p>
-  <p>
-    <a href="https://multiversa.group">multiversa.group</a> • 
-    <a href="https://linkedin.com/in/moumultiversa">LinkedIn</a> • 
-    <a href="https://www.getonbrd.com/p/moshe-quantum">GetOnBoard</a> • 
-    <a href="mailto:moshequantum@gmail.com">moshequantum@gmail.com</a>
+  <a href="https://multiversa.group">
+    <img src="./assets/banner.svg" alt="Moisés David Vera — Founding Product Engineer" width="100%" />
+  </a>
+
+  <br/><br/>
+
+  <p align="center">
+    <a href="https://multiversa.group">🌐 <b>multiversa.group</b></a> • 
+    <a href="https://linkedin.com/in/moumultiversa">💼 <b>LinkedIn</b></a> • 
+    <a href="https://www.getonbrd.com/p/moshe-quantum">📄 <b>GetOnBoard</b></a> • 
+    <a href="mailto:moshequantum@gmail.com">📫 <b>moshequantum@gmail.com</b></a>
   </p>
 </div>
 
