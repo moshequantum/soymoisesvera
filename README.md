@@ -1,6 +1,6 @@
 <div align="center">
   <a href="https://multiversa.group">
-    <img src="./assets/banner.svg" alt="Moisés David Vera — Founding Product Engineer" width="100%" />
+    <img src="./assets/banner.png" alt="Moisés David Vera — Founding Product Engineer" width="100%" />
   </a>
 
   <br/><br/>
@@ -15,7 +15,7 @@
 
 ---
 
-## 🇺🇸 English
+## English (EN)
 
 ### Hi, I'm Moisés David Vera 👋
 **Founding Product Engineer · AI-Native & Rapid Delivery (0 → 1)**
@@ -35,7 +35,7 @@ I help founders ship complete digital products in days, not months. 16+ years of
 
 ---
 
-## 🇪🇸 Español
+## Español (ES)
 
 ### Hola, soy Moisés David Vera 👋
 **Founding Product Engineer · AI-Native & Despliegue Rápido (0 → 1)**

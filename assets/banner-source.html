@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      width: 1200px;
+      height: 520px;
+      background-color: #0B0B0E;
+      background-image: 
+        linear-gradient(to right, rgba(255, 255, 255, 0.11) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(255, 255, 255, 0.11) 1px, transparent 1px);
+      background-size: 60px 60px;
+      color: #FFFFFF;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 50px 60px 40px 60px;
+    }
+
+    .top-badge {
+      display: inline-flex;
+      align-items: center;
+      padding: 6px 18px;
+      border-radius: 9999px;
+      border: 1.5px solid #BDEB34;
+      color: #BDEB34;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      width: fit-content;
+      margin-bottom: 24px;
+    }
+
+    .main-content {
+      max-width: 780px;
+      z-index: 2;
+    }
+
+    .headline {
+      font-family: 'Newsreader', Georgia, serif;
+      font-size: 54px;
+      line-height: 1.08;
+      font-weight: 400;
+      letter-spacing: -0.5px;
+      color: #FFFFFF;
+      margin-bottom: 18px;
+    }
+
+    .headline span.name {
+      font-weight: 500;
+      color: #FFFFFF;
+      display: block;
+      margin-bottom: 6px;
+    }
+
+    .headline span.italic {
+      font-style: italic;
+      color: #F4F4F5;
+    }
+
+    .subtitle {
+      font-size: 16px;
+      line-height: 1.5;
+      color: #A1A1AA;
+      max-width: 680px;
+      font-weight: 400;
+      margin-bottom: 28px;
+    }
+
+    .chips-row {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .chip {
+      padding: 8px 14px;
+      border-radius: 6px;
+      border: 1px solid rgba(255, 255, 255, 0.28);
+      background: rgba(11, 11, 14, 0.7);
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 12px;
+      color: #E4E4E7;
+      letter-spacing: 0.5px;
+    }
+
+    /* Iconic Multiversa Logo Right */
+    .brand-mark {
+      position: absolute;
+      right: 60px;
+      top: 50%;
+      transform: translateY(-56%);
+      width: 280px;
+      height: 280px;
+      border-radius: 50%;
+      background-color: #BDEB34;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 1;
+      box-shadow: 0 0 60px rgba(189, 235, 52, 0.15);
+    }
+
+    .brand-mark svg {
+      width: 140px;
+      height: 140px;
+    }
+
+    /* Footer Row */
+    .footer-divider {
+      width: 100%;
+      height: 1px;
+      background-color: rgba(255, 255, 255, 0.25);
+      margin-bottom: 16px;
+    }
+
+    .footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 13px;
+    }
+
+    .footer-left {
+      font-family: 'Newsreader', Georgia, serif;
+      font-size: 18px;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      font-weight: 600;
+      color: #FFFFFF;
+    }
+
+    .footer-center {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      color: #71717A;
+      font-size: 13px;
+    }
+
+    .footer-right {
+      font-family: 'JetBrains Mono', monospace;
+      color: #BDEB34;
+      font-weight: 500;
+      font-size: 13px;
+      letter-spacing: 0.5px;
+    }
+  </style>
+</head>
+<body>
+  <div>
+    <div class="top-badge">FOUNDING PRODUCT ENGINEER · 0 → 1 DELIVERY</div>
+    
+    <div class="main-content">
+      <h1 class="headline">
+        <span class="name">Moisés David Vera</span>
+        Del requerimiento a producción <span class="italic">con criterio y velocidad.</span>
+      </h1>
+      
+      <p class="subtitle">
+        16+ años uniendo oficio visual, criterio de producto y sistemas pragmáticos en el edge. Llevo productos digitales de 0 a 1 eliminando semanas de traspaso entre diseño y backend.
+      </p>
+
+      <div class="chips-row">
+        <div class="chip">0 → 1 RAPID DELIVERY</div>
+        <div class="chip">PRAGMATIC AI &amp; HITL</div>
+        <div class="chip">EDGE &amp; ZERO-RETENTION</div>
+        <div class="chip">HACKERRANK CERTIFIED</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="brand-mark">
+    <!-- Multiversa 3 slanted bars -->
+    <svg viewBox="0 0 512 512" fill="none">
+      <path d="M199.757 341.747H136.33L160.115 170.252H223.587L199.757 341.747Z" fill="#0A0A0F"/>
+      <path d="M278.95 341.747H215.478L239.308 170.252H302.735L278.95 341.747Z" fill="#0A0A0F"/>
+      <path d="M358.098 341.747H294.672L318.456 170.252H333.728C359.179 170.252 378.775 192.731 375.261 217.958L358.098 341.747Z" fill="#0A0A0F"/>
+    </svg>
+  </div>
+
+  <div>
+    <div class="footer-divider"></div>
+    <div class="footer">
+      <div class="footer-left">MULTIVERSA GROUP</div>
+      <div class="footer-center">Moisés David Vera · Founding Product Engineer</div>
+      <div class="footer-right">multiversa.group</div>
+    </div>
+  </div>
+</body>
+</html>
