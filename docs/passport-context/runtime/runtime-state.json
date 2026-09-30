@@ -1,0 +1,39 @@
+{
+  "schemaVersion": 1,
+  "packageVersion": "0.1.0",
+  "asOf": "2026-09-29",
+  "scope": "passport-context-package",
+  "state": "baseline-local",
+  "capabilities": {
+    "portableContext": "available",
+    "profileExport": "available",
+    "hashVerification": "available",
+    "externalIdentity": "verified-hackerrank-efset",
+    "persistentMemory": "engram-available",
+    "runtimeExecution": "subordinated-human-in-the-loop",
+    "cloudSynchronization": "multiversaos-cloud-compatible",
+    "voiceInteraction": "available-suno-pipeline",
+    "payments": "b2b-multiversagroup-wyoming"
+  },
+  "authority": {
+    "grantedByPackage": false,
+    "defaultAuthorization": "deny",
+    "requiresVerifiedIdentity": true,
+    "requiresExplicitDelegation": true
+  },
+  "privacy": {
+    "containsSecrets": false,
+    "containsClientData": false,
+    "privateLayerIncluded": true,
+    "publicExportMustExclude": [
+      "private/"
+    ]
+  },
+  "refreshTriggers": [
+    "Cambio de oferta o tarifas objetivo",
+    "Conexión o retiro de adaptadores de runtime",
+    "Nuevos proyectos reales en producción",
+    "Lanzamiento de nuevas producciones sonoras o herramientas",
+    "Evolución de doctrina aprobada por Moisés David Vera"
+  ]
+}

@@ -1,0 +1,42 @@
+{
+  "schemaVersion": 1,
+  "packageVersion": "0.1.0",
+  "architectureStyle": "hexagonal",
+  "asOf": "2026-09-29",
+  "declarationOnly": true,
+  "adapters": {
+    "identity": {
+      "status": "local-profile",
+      "authorityGranted": false
+    },
+    "context": {
+      "status": "local-versioned-files",
+      "authorityGranted": false
+    },
+    "memory": {
+      "status": "engram-sqlite-fts5",
+      "implicitPersistence": false
+    },
+    "models": {
+      "status": "frontier-orchestration",
+      "providers": ["gemini", "claude", "openai"]
+    },
+    "audio": {
+      "status": "suno-assisted-production",
+      "authorityGranted": false
+    },
+    "desktop": {
+      "status": "tauri-in-development",
+      "authorityGranted": false
+    },
+    "cloud": {
+      "status": "cloudflare-workers-edge",
+      "deploymentAuthorized": false
+    }
+  },
+  "rules": [
+    "Un estado declarado no sustituye una prueba en vivo en producción.",
+    "Cambiar un adaptador exige revisar compatibilidad, datos, permisos, coste y observabilidad.",
+    "Ningún adaptador obtiene autoridad administrativa o financiera a partir de este archivo."
+  ]
+}

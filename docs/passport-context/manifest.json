@@ -1,0 +1,191 @@
+{
+  "schemaVersion": 1,
+  "kind": "PASSPORT-CONTEXT",
+  "name": "SoyMoisesVera baseline",
+  "packageVersion": "0.1.0",
+  "originator": "SoyMoisesVera",
+  "language": "es",
+  "asOf": "2026-09-29",
+  "updatedAt": "2026-09-29",
+  "runtimeVerifiedAt": null,
+  "ownership": "originator-owned",
+  "implicitMemory": false,
+  "authorityGrantedByPackage": false,
+  "hashAlgorithm": "sha256",
+  "hashEncoding": "lowercase-hex",
+  "hashByteContract": "UTF-8, LF line endings",
+  "manifestSelfHash": {
+    "hashMode": "raw-bytes-with-own-sha256-replaced-by-64-zeroes",
+    "path": "manifest.json",
+    "placeholder": "0000000000000000000000000000000000000000000000000000000000000000"
+  },
+  "loadContract": {
+    "bootstrap": [
+      "manifest.json"
+    ],
+    "firstContext": "MASTER-PROMPT.md",
+    "then": "profiles[].files in listed order",
+    "duplicatesAllowed": false
+  },
+  "files": [
+    {
+      "path": "manifest.json",
+      "layer": "manifest",
+      "visibility": "public",
+      "mediaType": "application/json",
+      "sha256": "4d60cce9955b81fde5134a9c753ecffa2d19c9c825095dea2761e4f79e7398af"
+    },
+    {
+      "path": "README.md",
+      "layer": "guide",
+      "visibility": "public",
+      "mediaType": "text/markdown",
+      "sha256": "84de8ca9317b3cec0e731cda1afe8fc33b644d3dc6cba86961d5f451f4f14990"
+    },
+    {
+      "path": "MASTER-PROMPT.md",
+      "layer": "interpreter",
+      "visibility": "public",
+      "mediaType": "text/markdown",
+      "sha256": "6d69e4f60f3a052b937ecfaaac819bbfbebacf8192dadbafc0c22a43097d27a5"
+    },
+    {
+      "path": "01-IDENTITY.md",
+      "layer": "identity",
+      "visibility": "public",
+      "mediaType": "text/markdown",
+      "sha256": "5d085e36cc6fa12253532b76f29d612fd8d91ae265c278e8fd74bafcd9bd9c2b"
+    },
+    {
+      "path": "02-DOCTRINE.md",
+      "layer": "doctrine",
+      "visibility": "public",
+      "mediaType": "text/markdown",
+      "sha256": "0ed71acad755f164b0df80a28c8a70417eeab27c7084dd47988ae3fcf2c62de1"
+    },
+    {
+      "path": "03-VOICE.md",
+      "layer": "voice",
+      "visibility": "public",
+      "mediaType": "text/markdown",
+      "sha256": "189b4f2ea566944253adcbc57ffa28381d27baf7a988421e19ea9d9841898100"
+    },
+    {
+      "path": "04-OFFER.md",
+      "layer": "offer",
+      "visibility": "public",
+      "mediaType": "text/markdown",
+      "sha256": "efac7738ccc1fffd1688ed65269bb9bb2f6ef9f72ae0fd147ebddfe4a6d3ef74"
+    },
+    {
+      "path": "05-GOVERNANCE.md",
+      "layer": "governance",
+      "visibility": "public",
+      "mediaType": "text/markdown",
+      "sha256": "909289c3b26adb430077a5e7094b49db2645f3d25e16bd8a360ef4e8709af1e8"
+    },
+    {
+      "path": "06-CURRENT-STATE.md",
+      "layer": "state",
+      "visibility": "public",
+      "mediaType": "text/markdown",
+      "sha256": "3060c6b88c957d329759f29a264fb14180e11f8308f969ef4abdfee87733fadb"
+    },
+    {
+      "path": "07-EVIDENCE.md",
+      "layer": "evidence",
+      "visibility": "public",
+      "mediaType": "text/markdown",
+      "sha256": "16d9b543beb0657cff26638aa50a9e9eb086fddd11192a8e80d4be79410e2ff3"
+    },
+    {
+      "path": "runtime/adapters.json",
+      "layer": "runtime",
+      "visibility": "operational-private",
+      "mediaType": "application/json",
+      "sha256": "faae4dbb97b76ecc99a22052df244b0778de256b7352267e10a928e80702db98"
+    },
+    {
+      "path": "runtime/runtime-state.json",
+      "layer": "runtime",
+      "visibility": "operational-private",
+      "mediaType": "application/json",
+      "sha256": "5fd20f5ea4429cfa574230cbb78fb9c7137c91a05885eb3a4e1ee3cf3539db57"
+    },
+    {
+      "path": "private/founder-private.md",
+      "layer": "private",
+      "visibility": "founder-private",
+      "mediaType": "text/markdown",
+      "sha256": "a9d2bc4897db55bd9aadc102be3f4e107ee1045cb306bd6b8e18a13930434eff"
+    }
+  ],
+  "profiles": [
+    {
+      "id": "core-public",
+      "name": "Core Public",
+      "description": "Identidad, doctrina, voz y gobernanza de SoyMoisesVera para comprensión general.",
+      "files": [
+        "README.md",
+        "MASTER-PROMPT.md",
+        "01-IDENTITY.md",
+        "02-DOCTRINE.md",
+        "03-VOICE.md",
+        "05-GOVERNANCE.md"
+      ]
+    },
+    {
+      "id": "commercial-public",
+      "name": "Commercial Public",
+      "description": "Perfil completo para postulaciones, plataformas B2B y propuestas profesionales.",
+      "files": [
+        "README.md",
+        "MASTER-PROMPT.md",
+        "01-IDENTITY.md",
+        "02-DOCTRINE.md",
+        "03-VOICE.md",
+        "04-OFFER.md",
+        "05-GOVERNANCE.md",
+        "06-CURRENT-STATE.md",
+        "07-EVIDENCE.md"
+      ]
+    },
+    {
+      "id": "operational-private",
+      "name": "Operational Private",
+      "description": "Perfil para ingesta y orquestación con MultiversaLab y Cloud Runtime.",
+      "files": [
+        "README.md",
+        "MASTER-PROMPT.md",
+        "01-IDENTITY.md",
+        "02-DOCTRINE.md",
+        "03-VOICE.md",
+        "04-OFFER.md",
+        "05-GOVERNANCE.md",
+        "06-CURRENT-STATE.md",
+        "07-EVIDENCE.md",
+        "runtime/adapters.json",
+        "runtime/runtime-state.json"
+      ]
+    },
+    {
+      "id": "founder-private",
+      "name": "Founder Private",
+      "description": "Perfil privado completo para asistencia directa personalizada a Moisés David Vera.",
+      "files": [
+        "README.md",
+        "MASTER-PROMPT.md",
+        "01-IDENTITY.md",
+        "02-DOCTRINE.md",
+        "03-VOICE.md",
+        "04-OFFER.md",
+        "05-GOVERNANCE.md",
+        "06-CURRENT-STATE.md",
+        "07-EVIDENCE.md",
+        "runtime/adapters.json",
+        "runtime/runtime-state.json",
+        "private/founder-private.md"
+      ]
+    }
+  ]
+}
