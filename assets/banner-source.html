@@ -1,10 +1,10 @@
-﻿<!DOCTYPE html>
-<html lang="es">
+<!DOCTYPE html>
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Newsreader:ital,opsz,wght@1,6..72,400;1,6..72,500&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Newsreader:ital,opsz,wght@1,6..72,400;1,6..72,500;1,6..72,600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <style>
     * {
       margin: 0;
@@ -20,53 +20,68 @@
       position: relative;
       overflow: hidden;
       display: flex;
-      flex-direction: column;
       align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding: 0 40px;
+      justify-content: space-between;
+      padding: 0 54px;
       border: 1px solid rgba(255, 255, 255, 0.08);
       border-radius: 16px;
     }
 
-    /* Ambient Cosmic Glow (Subtle & Diffused) */
+    /* Ambient Cosmic Bloom */
     .ambient-glow {
       position: absolute;
       top: 50%;
-      left: 50%;
+      left: 30%;
       transform: translate(-50%, -50%);
-      width: 750px;
-      height: 220px;
-      background: radial-gradient(ellipse at center, rgba(147, 51, 234, 0.16) 0%, rgba(82, 39, 255, 0.08) 45%, transparent 75%);
-      filter: blur(40px);
+      width: 650px;
+      height: 240px;
+      background: radial-gradient(ellipse at center, rgba(168, 85, 247, 0.20) 0%, rgba(82, 39, 255, 0.08) 50%, transparent 75%);
+      filter: blur(45px);
       pointer-events: none;
       z-index: 0;
     }
 
-    .content {
-      position: relative;
-      z-index: 1;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
+    .grid-overlay {
+      position: absolute;
+      inset: 0;
+      background-image: linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px),
+                        linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px);
+      background-size: 32px 32px;
+      mask-image: radial-gradient(circle at 50% 50%, black 40%, transparent 85%);
+      z-index: 0;
     }
 
-    /* Pill Tag */
+    /* Left Column */
+    .left-col {
+      position: relative;
+      z-index: 1;
+      max-width: 650px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .pill-row {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 14px;
+    }
+
     .top-pill {
       display: inline-flex;
       align-items: center;
       gap: 8px;
       padding: 5px 14px;
       border-radius: 9999px;
-      background: rgba(255, 255, 255, 0.035);
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      color: #D4D4D8;
+      background: rgba(192, 132, 252, 0.08);
+      border: 1px solid rgba(192, 132, 252, 0.28);
+      color: #E9D5FF;
       font-family: 'JetBrains Mono', monospace;
       font-size: 11px;
-      font-weight: 500;
-      letter-spacing: 1.5px;
+      font-weight: 600;
+      letter-spacing: 1.2px;
       text-transform: uppercase;
-      margin-bottom: 18px;
     }
 
     .pill-dot {
@@ -77,74 +92,210 @@
       box-shadow: 0 0 8px #c084fc;
     }
 
-    /* Name Headline */
+    .handle-pill {
+      display: inline-flex;
+      align-items: center;
+      padding: 5px 12px;
+      border-radius: 9999px;
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      color: #A1A1AA;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px;
+      letter-spacing: 0.5px;
+    }
+
     .name-title {
-      font-size: 44px;
-      font-weight: 700;
-      letter-spacing: -1.2px;
+      font-size: 38px;
+      font-weight: 800;
+      letter-spacing: -1px;
       color: #FFFFFF;
       line-height: 1.1;
+      margin-bottom: 4px;
+    }
+
+    .role-subtitle {
+      font-size: 15px;
+      font-weight: 600;
+      color: #c084fc;
+      letter-spacing: -0.2px;
       margin-bottom: 10px;
     }
 
-    /* Editorial Statement */
     .statement {
-      font-size: 21px;
+      font-size: 16px;
       font-weight: 400;
       color: #E4E4E7;
-      letter-spacing: -0.3px;
-      margin-bottom: 22px;
+      letter-spacing: -0.2px;
+      line-height: 1.35;
+      margin-bottom: 16px;
     }
 
     .statement .serif-italic {
       font-family: 'Newsreader', Georgia, serif;
       font-style: italic;
-      font-weight: 400;
+      font-size: 19px;
       color: #FFFFFF;
-      padding-right: 2px;
     }
 
-    /* Metadata Bar */
-    .metadata-bar {
+    /* Tags */
+    .tags-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
+    .tag {
+      padding: 3px 9px;
+      border-radius: 6px;
+      background: rgba(255, 255, 255, 0.035);
+      border: 1px solid rgba(255, 255, 255, 0.09);
+      color: #D4D4D8;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 10px;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+    }
+
+    .tag-accent {
+      background: rgba(82, 39, 255, 0.18);
+      border-color: rgba(168, 85, 247, 0.35);
+      color: #E9D5FF;
+      font-weight: 600;
+    }
+
+    /* Right Column - Track Record Card */
+    .right-card {
+      position: relative;
+      z-index: 1;
+      width: 420px;
+      background: rgba(18, 16, 26, 0.75);
+      border: 1px solid rgba(192, 132, 252, 0.18);
+      border-radius: 12px;
+      padding: 16px 20px;
+      backdrop-filter: blur(16px);
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.45);
+    }
+
+    .card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 12px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    }
+
+    .card-title {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      color: #c084fc;
+      text-transform: uppercase;
+    }
+
+    .card-live {
       display: flex;
       align-items: center;
-      gap: 14px;
+      gap: 5px;
       font-family: 'JetBrains Mono', monospace;
-      font-size: 11px;
-      color: #9894AA;
+      font-size: 10px;
+      color: #A1A1AA;
       letter-spacing: 1px;
     }
 
-    .metadata-bar .sep {
-      color: rgba(255, 255, 255, 0.2);
+    .card-live-dot {
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background: #c084fc;
+      box-shadow: 0 0 6px #c084fc;
+    }
+
+    .project-item {
+      margin-bottom: 8px;
+    }
+    .project-item:last-child {
+      margin-bottom: 0;
+    }
+
+    .project-name {
+      font-size: 12px;
+      font-weight: 600;
+      color: #FFFFFF;
+      margin-bottom: 1px;
+    }
+
+    .project-meta {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 10px;
+      color: #9894AA;
+      letter-spacing: 0.3px;
     }
   </style>
 </head>
 <body>
   <div class="ambient-glow"></div>
+  <div class="grid-overlay"></div>
 
-  <div class="content">
-    <div class="top-pill">
-      <span class="pill-dot"></span>
-      <span>FOUNDING PRODUCT ENGINEER Â· MULTIVERSA GROUP</span>
+  <div class="left-col">
+    <div class="pill-row">
+      <div class="top-pill">
+        <span class="pill-dot"></span>
+        <span>CO-FOUNDER @ MULTIVERSA GROUP LLC</span>
+      </div>
+      <div class="handle-pill">@SoyMoisesVera · MosheQuantum</div>
     </div>
 
-    <h1 class="name-title">MoisÃ©s David Vera</h1>
+    <h1 class="name-title">Moisés David Vera</h1>
+    <div class="role-subtitle">Founding AI Product Engineer &amp; Systems Architect (0 → 1)</div>
 
     <p class="statement">
-      <span class="serif-italic">Llevo productos digitales</span> de la idea a producciÃ³n.
+      <span class="serif-italic">High-craft UI, Design Systems &amp; deterministic Edge AI</span> — shipped to production in days, not quarters.
     </p>
 
-    <div class="metadata-bar">
-      <span>AI-NATIVE EXECUTION</span>
-      <span class="sep">â€¢</span>
-      <span>DESIGN SYSTEMS</span>
-      <span class="sep">â€¢</span>
-      <span>EDGE ARCHITECTURE</span>
-      <span class="sep">â€¢</span>
-      <span>16+ YEARS CRAFT</span>
+    <div class="tags-row">
+      <span class="tag tag-accent">16+ Years in Production</span>
+      <span class="tag">Python</span>
+      <span class="tag">Go</span>
+      <span class="tag">Node.js</span>
+      <span class="tag">TypeScript</span>
+      <span class="tag">PostgreSQL</span>
+      <span class="tag">SurrealDB</span>
+      <span class="tag">Cloudflare Edge</span>
+      <span class="tag tag-accent">US B2B Entity (Wyoming LLC)</span>
+    </div>
+  </div>
+
+  <div class="right-card">
+    <div class="card-header">
+      <span class="card-title">VERIFIED PRODUCTION TRACK RECORD</span>
+      <div class="card-live">
+        <span class="card-live-dot"></span>
+        <span>LIVE</span>
+      </div>
+    </div>
+
+    <div class="project-item">
+      <div class="project-name">OpenPassport Context Engine</div>
+      <div class="project-meta">Go · SHA-256 Hashes · MCP for Claude &amp; Cursor</div>
+    </div>
+
+    <div class="project-item">
+      <div class="project-name">Velo Edge Infrastructure Harness</div>
+      <div class="project-meta">Go TUI · Astro · Cloudflare Pages · InsForge BaaS</div>
+    </div>
+
+    <div class="project-item">
+      <div class="project-name">Real-Time HITL AI Control Plane</div>
+      <div class="project-meta">Telegram · Cloudflare Edge · Tool Approval Gate</div>
+    </div>
+
+    <div class="project-item">
+      <div class="project-name">Headless News Migration (EntreTormentas)</div>
+      <div class="project-meta">KeyStatic · Zero-Plugin · Core Web Vitals Scaled</div>
     </div>
   </div>
 </body>
 </html>
-
