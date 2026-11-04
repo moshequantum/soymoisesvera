@@ -7,4 +7,24 @@ dist/
 .env.*
 !.env.example
 
+# Temporary / OS artifacts
+*.tmp
+temp_*
+*.wav
+
+# Internal / Admin / Client docs
+*_Kit.md
+*_Strategy.md
+*_Branding.md
+*Cintia*
+*Contra*
+*Wellfound*
+*Deck*
+*Album*
+*SlideDeck*
+*.pdf
+
+# Local submodules & job trackers
 multiversa-job-search/
+admin/
+private/
