@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Newsreader:ital,opsz,wght@1,6..72,400;1,6..72,500;1,6..72,600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      width: 1920px;
+      height: 1080px;
+      background-color: #08070C;
+      color: #FFFFFF;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 0 120px;
+    }
+    .ambient-glow {
+      position: absolute;
+      top: 50%;
+      left: 45%;
+      transform: translate(-50%, -50%);
+      width: 1200px;
+      height: 600px;
+      background: radial-gradient(ellipse at center, rgba(168, 85, 247, 0.22) 0%, rgba(82, 39, 255, 0.09) 48%, transparent 75%);
+      filter: blur(80px);
+      pointer-events: none;
+      z-index: 0;
+    }
+    .grid-overlay {
+      position: absolute;
+      inset: 0;
+      background-image: linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px),
+                        linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px);
+      background-size: 54px 54px;
+      mask-image: radial-gradient(circle at 50% 50%, black 45%, transparent 85%);
+      z-index: 0;
+    }
+    .main-container {
+      position: relative;
+      z-index: 1;
+      width: 100%;
+      max-width: 1680px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 60px;
+    }
+    .left-col {
+      flex: 1;
+      max-width: 980px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    .pill-row {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 28px;
+    }
+    .top-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 9px 20px;
+      border-radius: 9999px;
+      background: rgba(192, 132, 252, 0.08);
+      border: 1px solid rgba(192, 132, 252, 0.28);
+      color: #E9D5FF;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 15px;
+      font-weight: 600;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+    }
+    .pill-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #c084fc;
+      box-shadow: 0 0 10px #c084fc;
+    }
+    .handle-pill {
+      display: inline-flex;
+      align-items: center;
+      padding: 9px 18px;
+      border-radius: 9999px;
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      color: #A1A1AA;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 14px;
+      letter-spacing: 0.8px;
+    }
+    .name-title {
+      font-size: 76px;
+      font-weight: 800;
+      letter-spacing: -2px;
+      color: #FFFFFF;
+      line-height: 1.05;
+      margin-bottom: 12px;
+    }
+    .role-subtitle {
+      font-size: 26px;
+      font-weight: 600;
+      color: #c084fc;
+      letter-spacing: -0.3px;
+      margin-bottom: 22px;
+    }
+    .statement {
+      font-size: 28px;
+      font-weight: 400;
+      color: #E4E4E7;
+      letter-spacing: -0.4px;
+      line-height: 1.4;
+      margin-bottom: 36px;
+    }
+    .statement .serif-italic {
+      font-family: 'Newsreader', Georgia, serif;
+      font-style: italic;
+      font-size: 34px;
+      color: #FFFFFF;
+    }
+    .tags-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .tag {
+      padding: 8px 16px;
+      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.035);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      color: #D4D4D8;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 13px;
+      letter-spacing: 0.6px;
+      text-transform: uppercase;
+    }
+    .tag-accent {
+      background: rgba(82, 39, 255, 0.22);
+      border-color: rgba(168, 85, 247, 0.4);
+      color: #E9D5FF;
+      font-weight: 600;
+    }
+
+    /* Right Column Card */
+    .right-card {
+      position: relative;
+      z-index: 1;
+      width: 540px;
+      background: rgba(18, 16, 26, 0.8);
+      border: 1px solid rgba(192, 132, 252, 0.22);
+      border-radius: 20px;
+      padding: 32px 36px;
+      backdrop-filter: blur(20px);
+      box-shadow: 0 16px 48px rgba(0, 0, 0, 0.55);
+    }
+    .card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 24px;
+      padding-bottom: 14px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+    .card-title {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      color: #c084fc;
+      text-transform: uppercase;
+    }
+    .card-live {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 12px;
+      color: #A1A1AA;
+      letter-spacing: 1px;
+    }
+    .card-live-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: #c084fc;
+      box-shadow: 0 0 8px #c084fc;
+    }
+    .project-item {
+      margin-bottom: 20px;
+    }
+    .project-item:last-child {
+      margin-bottom: 0;
+    }
+    .project-name {
+      font-size: 17px;
+      font-weight: 600;
+      color: #FFFFFF;
+      margin-bottom: 4px;
+    }
+    .project-meta {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 13px;
+      color: #9894AA;
+      letter-spacing: 0.5px;
+    }
+  </style>
+</head>
+<body>
+  <div class="ambient-glow"></div>
+  <div class="grid-overlay"></div>
+
+  <div class="main-container">
+    <div class="left-col">
+      <div class="pill-row">
+        <div class="top-pill">
+          <span class="pill-dot"></span>
+          <span>CO-FOUNDER @ MULTIVERSA GROUP LLC</span>
+        </div>
+        <div class="handle-pill">@SoyMoisesVera · MosheQuantum</div>
+      </div>
+
+      <h1 class="name-title">Moisés David Vera</h1>
+      <div class="role-subtitle">Founding AI Product Engineer &amp; Systems Architect (0 → 1)</div>
+
+      <p class="statement">
+        <span class="serif-italic">High-craft UI, Design Systems &amp; deterministic Edge AI</span> — shipped to production in days, not quarters.
+      </p>
+
+      <div class="tags-row">
+        <span class="tag tag-accent">16+ Years in Production</span>
+        <span class="tag">Python</span>
+        <span class="tag">Go</span>
+        <span class="tag">Node.js</span>
+        <span class="tag">TypeScript</span>
+        <span class="tag">PostgreSQL</span>
+        <span class="tag">SurrealDB</span>
+        <span class="tag">Cloudflare Edge</span>
+        <span class="tag tag-accent">US B2B Entity (Wyoming LLC)</span>
+      </div>
+    </div>
+
+    <div class="right-card">
+      <div class="card-header">
+        <span class="card-title">VERIFIED PRODUCTION TRACK RECORD</span>
+        <div class="card-live">
+          <span class="card-live-dot"></span>
+          <span>LIVE</span>
+        </div>
+      </div>
+
+      <div class="project-item">
+        <div class="project-name">OpenPassport Context Engine</div>
+        <div class="project-meta">Go · SHA-256 Cryptographic Seals · MCP Server for Claude</div>
+      </div>
+
+      <div class="project-item">
+        <div class="project-name">Velo Edge Infrastructure Harness</div>
+        <div class="project-meta">Go TUI · Astro 5 · Cloudflare Pages · InsForge BaaS</div>
+      </div>
+
+      <div class="project-item">
+        <div class="project-name">Real-Time HITL AI Control Plane</div>
+        <div class="project-meta">Telegram Bot API · Cloudflare Workers · LLM Tool Gates</div>
+      </div>
+
+      <div class="project-item">
+        <div class="project-name">Headless News Migration (EntreTormentas)</div>
+        <div class="project-meta">KeyStatic · Zero-Plugin · Core Web Vitals Scaled</div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
